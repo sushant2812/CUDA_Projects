@@ -10,7 +10,7 @@ using namespace std;
 struct Vector {
 	double x, y, z;
 };
-const size_t WORKINGSET = 256*1024;
+const size_t WORKINGSET = 256 * 1024;
 
 void CPUVectorAdd(const Vector* arrA, const Vector* arrB, Vector* arrC, size_t size) {
 	for (size_t i = 0; i < size; i++) {
@@ -32,11 +32,10 @@ __global__ void GPUVectorArrAdd(const Vector* arrA, const Vector* arrB, Vector* 
 
 }
 int main() {
-	// Print Hello World
-	std::cout << "Hello World" << std::endl;
+	cout << "First Cuda Program :)" << endl;
 	//Prepare a workset
 	cout << "Prepare a workset" << endl;
-	Vector* A = (Vector*) malloc(sizeof(Vector) * WORKINGSET);
+	Vector* A = (Vector*)malloc(sizeof(Vector) * WORKINGSET);
 	Vector* B = (Vector*)malloc(sizeof(Vector) * WORKINGSET);
 	Vector* C = (Vector*)malloc(sizeof(Vector) * WORKINGSET);
 	assert(A && B && "Memory allocation failed");
@@ -65,12 +64,12 @@ int main() {
 	//Copy Data to GPU (CPU-> GPU)
 	cudaMemcpy(gpuA, A, sizeof(Vector) * WORKINGSET, cudaMemcpyHostToDevice);
 	cudaMemcpy(gpuB, B, sizeof(Vector) * WORKINGSET, cudaMemcpyHostToDevice);
-	
+
 	//Process Data on GPU
 	const size_t BLOCK_SIZE = 256;
 	const size_t blockCount = WORKINGSET / BLOCK_SIZE;
-	GPUVectorArrAdd<<<blockCount,BLOCK_SIZE,>>>(A, B, C);
-	
+	GPUVectorArrAdd << <blockCount, BLOCK_SIZE >> > (gpuA, gpuB, gpuC);
+
 	//Fetch Result from GPU (GPU -> CPU)
 	cudaMemcpy(C, gpuC, sizeof(Vector) * WORKINGSET, cudaMemcpyDeviceToHost);
 
@@ -80,5 +79,13 @@ int main() {
 	for (int i = 0; i < 10; i++) {
 		cout << "Result of X: " << C[i].x << " Y: " << C[i].y << " Z: " << C[i].z << endl;
 	}
+
+	//Free Memory
+	cudaFree(gpuA);
+	cudaFree(gpuB);
+	cudaFree(gpuC);
+	free(A);
+	free(B);
+	free(C);
 
 }
