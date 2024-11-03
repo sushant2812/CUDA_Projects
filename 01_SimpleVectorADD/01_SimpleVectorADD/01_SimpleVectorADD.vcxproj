@@ -43,11 +43,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\bin\$(ProjectName)-$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)\bin\$(ProjectName)-$(Configuration)\obj</IntDir>
+    <IntDir>$(SolutionDir)\bin\$(ProjectName)-$(Configuration)\obj\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)\bin\$(ProjectName)-$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)\bin\$(ProjectName)-$(Configuration)\obj</IntDir>
+    <IntDir>$(SolutionDir)\bin\$(ProjectName)-$(Configuration)\obj\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
