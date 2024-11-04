@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01_SimpleVectorADD", "01_SimpleVectorADD\01_SimpleVectorADD.vcxproj", "{56300AAA-EF2F-46C6-A1FD-DAE0ECCDA52C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02_ImageToGray", "02_ImageToGray\02_ImageToGray.vcxproj", "{25010F28-88CA-4757-8496-628687E9D3D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -15,6 +17,10 @@ Global
 		{56300AAA-EF2F-46C6-A1FD-DAE0ECCDA52C}.Debug|x64.Build.0 = Debug|x64
 		{56300AAA-EF2F-46C6-A1FD-DAE0ECCDA52C}.Release|x64.ActiveCfg = Release|x64
 		{56300AAA-EF2F-46C6-A1FD-DAE0ECCDA52C}.Release|x64.Build.0 = Release|x64
+		{25010F28-88CA-4757-8496-628687E9D3D9}.Debug|x64.ActiveCfg = Debug|x64
+		{25010F28-88CA-4757-8496-628687E9D3D9}.Debug|x64.Build.0 = Debug|x64
+		{25010F28-88CA-4757-8496-628687E9D3D9}.Release|x64.ActiveCfg = Release|x64
+		{25010F28-88CA-4757-8496-628687E9D3D9}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
