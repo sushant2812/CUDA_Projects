@@ -6,7 +6,7 @@ Consists of 2 CUDA Projects:-
 1. Vector Addition: Adds two simple vectors on the GPU. I used this to understand how indexing works in GPU thread blocks.
 2. Image to Grayscale: Converts in a single image to grayscale.
 
-## Interesting Statistics about the Programs
+## Interesting Stats about the Programs (via NSight)
 
 For the Vector Addition
 
